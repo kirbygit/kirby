@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KIRBY</title>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="JH4ZFJGVhfcn8U4xYfwyisr_OM5BqZTtDd0_08rCCjA" />
+    <meta name="author" content="Kirby">
+    <meta name="contact" content="mailto:">
+    <meta name="publisher" content="Kirby James">
+    <link rel="stylesheet" type="text/css" href="resources/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/avenir.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/layout.css">
+    <link rel="icon" type="image/png" href="resources/images/kirby.ico" sizes="16x16" />
+
+    <noscript>
+        <style>.btn { position: relative; } #content { top: 200px; } </style>
+    </noscript>
+
+    <script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
+    <script type='text/javascript' src="resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(window).load(function(){
+    $('.popoverData').popover();
+    });
+
+    $(function(){
+    function distributeFields() {
+        var radius = ($('#avatar').height() / 2) + 50;
+        var fields = $('.btn'), container = $('#circle'),
+            width = container.width(), height = container.height(),
+            step = (2*Math.PI) / fields.length, angle = 90 + step*2.5;
+        fields.each(function() {
+            var x = Math.round(width/2 + radius * Math.cos(angle) - $(this).width()/2);
+            var y = Math.round(height/2 + radius * Math.sin(angle) - $(this).height()/2);
+            if(window.console) {
+                console.log($(this).text(), x, y);
+            }
+            $(this).css({
+                left: x + 'px',
+                top: y + 'px'
+            });
+            angle += step;
+        });
+    }
+
+    distributeFields();
+    });
+    </script>
+
+</head>
+
+<body>
+    <div id="content">
+        <div id="circle">
+        <a href="https://kirbygit.github.io/kirbyjames.github.io/">
+            <img src="resources/images/avatar.jpg" alt="Kirby James" id="avatar">
+        </a>
+        <noscript><br/></noscript>
+
+        <a href="https://operationcode.org/"
+            class="btn popoverData" data-content="Operation Code" title="operation code" rel="popover" data-placement="left" data-trigger="hover">
+            <i class="fa fa-users"></i>
+        </a>
+        <a href="https://github.com/kirbygit"
+            class="btn popoverData" data-content="My github" title="my software" rel="popover" data-placement="right" data-trigger="hover">
+            <i class="fa fa-github"></i>
+        </a>
+        <a href="http://www.linkedin.com/in/kirbyyy"
+            class="btn popoverData" data-content="My professional network" title="my academic network" rel="popover" data-placement="right" data-trigger="hover">
+            <i class="fa fa-linkedin"></i>
+        </a>
+        <!-- <a href=""
+            class="btn popoverData" data-content="my photos" title="my photos" rel="popover" data-placement="left" data-trigger="hover">
+            <i class="fa fa-instagram"></i>
+        </a> -->
+        </div>
+        <div id="content_name">Kirby James Fernandez</div>
+        <div id="content_description">
+            <a href="https://kirbygit.github.io/kirby-james/" target="_blank" class="kirby-rights">© 2018 Kirby James Fernandez</a>
+            <br><small><a href=""></a></small>
+        </div>
+    </div>
+
+    <div id="metadata" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Kirby James</span>
+        <span itemprop="jobTitle"></span>
+        <span itemprop="gender">male</span>
+        <span itemprop="familyName">Fernandez</span>
+        <span itemprop="givenName">Kirby</span>
+
+        <span itemprop="affiliation" itemscope
+            itemtype="http://data-vocabulary.org/Organization">
+            <span itemprop="name">Operation Code</span>
+
+            <span itemprop="location" itemscope
+                itemtype="http://data-vocabulary.org/PostalAddress">
+                <span itemprop="addressLocality">Nationwide</span>
+                <span itemprop="addressCountry">U.S.A</span>
+            </span>
+        </span>
+
+        <span itemprop="address" itemscope
+            itemtype="http://data-vocabulary.org/PostalAddress">
+            <span itemprop="addressLocality">Los Angeles</span>
+            <span itemprop="addressCountry">U.S.A</span>
+        </span>
+
+        <a href="http://kirbyjames.me" itemprop="url">website</span>
+    </div>
+</body>
+
+</html>
